@@ -47,11 +47,12 @@ function update() {
 }
 
 function addMods() {
-  let gloves = items.spikedGauntlet
+  let gauntlet = items.spikedGauntlet.modifier
 
 }
 
-function giveSword() {
-
+function giveItem(input) {
+  let item = items[input]
+  werewolf.inventory.push(item);
 }
 
