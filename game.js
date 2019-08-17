@@ -25,8 +25,9 @@ let player = {
 //reset button set helth to 100, clear out array of item
 function reset() {
   health = 100;
-  console.log(werewolf.inventory[]);
-  // werewolf.inventory[];
+  console.log(werewolf.inventory[0])
+  werewolf.inventory.length = 0;
+  console.log(werewolf.inventory[0])
   update()
 }
 
