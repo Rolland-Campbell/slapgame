@@ -46,13 +46,12 @@ function update() {
   decreaseHealth.innerHTML = health.toString();
 }
 
-function addMods() {
-  let gauntlet = items.spikedGauntlet.modifier
-
-}
-
 function giveItem(input) {
   let item = items[input]
   werewolf.inventory.push(item);
+}
+
+function addMods() {
+
 }
 
