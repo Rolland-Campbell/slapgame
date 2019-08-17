@@ -16,18 +16,19 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <!-- title row -->
         <h1 class="text-center">Help Conan defeat the monster!</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-4 playerImage">
-        <!-- column for adventurer -->
+        <!-- column for picture of the mighty Conan -->
       </div>
       <div class="col-4">
         <!-- column for later content -->
       </div>
       <div class="col-4 enemy1">
-        <!-- column for enemy -->
+        <!-- column for enemy picture-->
       </div>
     </div>
     <div class="row">
@@ -60,17 +61,24 @@
   <div class="row">
     <!-- attack button row -->
     <div class="col-12 text-center pt-4">
-      <button onclick="slap()">CIMMERIAN SLAP!</button>
-      <button onclick="punch()">BARBARIAN HAYMAKER!</button>
-      <button onclick="kick()"><s>SPARTAN</s> BEEFY KICK!</button>
+      <button onclick="attackButton('slap')">CIMMERIAN SLAP!</button>
+      <button onclick="attackButton('punch')">BARBARIAN HAYMAKER!</button>
+      <button onclick="attackButton('kick')"><s>SPARTAN</s> BEEFY KICK!</button>
     </div>
   </div>
   <div class="row">
+    <!-- items button row -->
     <div class="col-12 text-center pt-4">
-      <button onclick="reset()">RESET</button>
-      <button onclick="giveItem('sword')">Sword</button>
+      <button onclick="giveItem('sword')">Sword of Crom</button>
+      <button onclick="giveItem('spikedGauntlet')">Gauntlet of DOOM</button>
+      <button onclick="giveItem('bootSpike')">Barbarian Booties</button>
     </div>
   </div>
+  <div class="row">
+    <!-- reset button row -->
+    <div class="col-12 text-center pt-4">
+      <button onclick="reset()">RESET</button>
+    </div>
   </div>
 </body>
 
