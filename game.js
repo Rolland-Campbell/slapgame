@@ -15,7 +15,6 @@ let werewolf = {
   inventory: []
 }
 
-//later use
 let player = {
   name: "Conan",
   health: 100,
@@ -25,9 +24,9 @@ let player = {
 //reset button set helth to 100, clear out array of item
 function reset() {
   health = 100;
-  console.log(werewolf.inventory[0])
-  werewolf.inventory.length = 0;
-  console.log(werewolf.inventory[0])
+  console.log(player.inventory[0])
+  player.inventory.length = 0;
+  console.log(player.inventory[0])
   update()
 }
 
@@ -70,11 +69,11 @@ function attackButton(inputAttack) {
 function giveItem(input) {
   let item = items[input]
   // console.log(input)
-  werewolf.inventory.push(item);
+  player.inventory.push(item);
 }
 
 let i = 0
-let itemDamage = werewolf.inventory[0].modifier
+let itemDamage = player.inventory[0].modifier
 
 // for (i = 0, i < itemDamage; i++) {
 //   health -= itemDamage
