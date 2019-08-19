@@ -52,6 +52,7 @@ function update() {
   decreaseHealth.innerHTML = health.toString();
 }
 
+//combined attacks into a single function
 function attackButton(inputAttack) {
   if (inputAttack == 'slap') {
     health--;
@@ -71,3 +72,11 @@ function giveItem(input) {
   // console.log(input)
   werewolf.inventory.push(item);
 }
+
+let i = 0
+let itemDamage = werewolf.inventory[0].modifier
+
+// for (i = 0, i < itemDamage; i++) {
+//   health -= itemDamage
+//   update()
+// }
