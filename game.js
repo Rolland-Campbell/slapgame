@@ -1,5 +1,6 @@
 //let health = 100;
 
+//dictionary of items to pull damage modifiers from later
 let items = {
   sword: { name: 'Sword of Crom', modifier: 15, description: 'AAAGGHH!' },
   spikedGauntlet: { name: 'Gauntlet of DOOM', modifier: 3, description: 'DOOOM' },
@@ -22,13 +23,14 @@ let player = {
   inventory: []
 }
 
-//reset button set helth to 100, clear out array of item
+//reset button set health to 100, clear out array of item
 function reset() {
+  //resets health to 100 on page
   mirrorMonster.health = 100;
-  console.log(player.inventory[0])
+  //resets inventory to 0
   player.inventory.length = 0;
-  console.log(player.inventory)
   let showItem = document.getElementById("itemPick")
+  //updates screen back to default text
   showItem.innerHTML = "<br><b>Unbridled FURY!!</b>"
   update()
 }
@@ -49,6 +51,7 @@ function reset() {
 //   update()
 // }
 
+//this function updates the monster health to the screen
 function update() {
   let decreaseHealth = document.getElementById("healthEnemy")
   decreaseHealth.innerHTML = mirrorMonster.health.toString();
@@ -56,19 +59,23 @@ function update() {
 
 //combined attacks into a single function
 function attackButton(inputAttack) {
-
+  //setting default itemDamage to 0
   let itemDamage = 0;
   if (player.inventory.length) {
+    //if there is an item in inventory, it uses the modifier damage instead
     itemDamage = player.inventory[0].modifier
   }
   if (inputAttack == 'slap') {
     mirrorMonster.health -= (1 + itemDamage);
+    noNegative()
     update()
   } else if (inputAttack == 'punch') {
     mirrorMonster.health -= (5 + itemDamage);
+    noNegative()
     update()
   } else if (inputAttack == 'kick') {
     mirrorMonster.health -= (10 + itemDamage);
+    noNegative()
     update()
   }
 }
@@ -78,10 +85,13 @@ function giveItem(input) {
   let item = items[input]
   let showItem = document.getElementById("itemPick")
   player.inventory[0] = item;
+  //updating the item on page, using `stuff` for string interpolation
   showItem.innerHTML = `<br><b>${player.inventory[0].name}!!</b>`;
 }
 
-// for (let i = 0, i < itemDamage; i++) {
-//   werewolf.health -= itemDamage
-//   update()
-// }
+//function to keep health from going below 0
+function noNegative() {
+  if (mirrorMonster.health < 1) {
+    mirrorMonster.health = 0;
+  }
+}

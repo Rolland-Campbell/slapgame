@@ -13,18 +13,18 @@
 
 <body>
   <script src="game.js"></script>
-  <div class="container">
+  <div class="container borderContainer">
     <div class="row">
-      <div class="col-12 firebackground">
+      <div class="col-12 fireBackground">
         <!-- title row -->
         <h1 class="text-center text-white">Help Conan defeat the monster!</h1>
       </div>
     </div>
     <div class="row bg-black">
-      <div class="col-4 playerImage2">
+      <div class="col-4 playerImage">
         <!-- column for picture of the mighty Conan -->
       </div>
-      <div class="col-4">
+      <div class="col-4 vsBackground">
         <!-- column for later content -->
       </div>
       <div class="col-4 enemy1">
@@ -58,27 +58,32 @@
         </span>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <!-- attack button row -->
-    <div class="col-12 text-center pt-4">
-      <button onclick="attackButton('slap')">CIMMERIAN SLAP!</button>
-      <button onclick="attackButton('punch')">BARBARIAN HAYMAKER!</button>
-      <button onclick="attackButton('kick')"><s>SPARTAN</s> BEEFY KICK!</button>
+    <div class="row">
+      <!-- attack button row -->
+      <div class="col-12 text-center pt-4">
+        <button onclick="attackButton('slap')">CIMMERIAN SLAP!</button>
+        <button onclick="attackButton('punch')">BARBARIAN HAYMAKER!</button>
+        <button onclick="attackButton('kick')"><s>SPARTAN</s> BEEFY KICK!</button>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <!-- items button row -->
-    <div class="col-12 text-center pt-4">
-      <button onclick="giveItem('sword')">Sword of Crom</button>
-      <button onclick="giveItem('spikedGauntlet')">Gauntlet of DOOM</button>
-      <button onclick="giveItem('bootSpike')">Barbarian Booties</button>
+    <div class="row">
+      <!-- items button row -->
+      <div class="col-12 text-center pt-4">
+        <button onclick="giveItem('sword')">Sword of Crom</button>
+        <button onclick="giveItem('spikedGauntlet')">Gauntlet of DOOM</button>
+        <button onclick="giveItem('bootSpike')">Barbarian Booties</button>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <!-- reset button row -->
-    <div class="col-12 text-center pt-4">
-      <button onclick="reset()">RESET</button>
+    <div class="row">
+      <!-- reset button row -->
+      <div class="col-12 text-center pt-4">
+        <button onclick="reset()" class="btn-danger">RESET</button>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col-12 text-center text-white fireBackground py-3">
+        <h2><b>The fate of the world is at hand!</b></h2>
+      </div>
     </div>
   </div>
 </body>
