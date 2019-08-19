@@ -1,4 +1,4 @@
-let health = 100;
+//let health = 100;
 
 let items = {
   sword: { name: 'Sword of Crom', modifier: 15, description: 'AAAGGHH!' },
@@ -9,6 +9,7 @@ let items = {
   parry: { name: 'Parry', modifier: -10, description: 'MISSED ME' },
 }
 
+//later use
 let werewolf = {
   name: "Werewolf",
   health: 100,
@@ -23,7 +24,7 @@ let player = {
 
 //reset button set helth to 100, clear out array of item
 function reset() {
-  health = 100;
+  player.health = 100;
   console.log(player.inventory[0])
   player.inventory.length = 0;
   console.log(player.inventory[0])
@@ -48,19 +49,19 @@ function reset() {
 
 function update() {
   let decreaseHealth = document.getElementById("healthEnemy")
-  decreaseHealth.innerHTML = health.toString();
+  decreaseHealth.innerHTML = player.health.toString();
 }
 
 //combined attacks into a single function
 function attackButton(inputAttack) {
   if (inputAttack == 'slap') {
-    health--;
+    player.health--;
     update()
   } else if (inputAttack == 'punch') {
-    health -= 5;
+    player.health -= 5;
     update()
   } else if (inputAttack == 'kick') {
-    health -= 10;
+    player.health -= 10;
     update()
   }
 }
@@ -76,6 +77,6 @@ let i = 0
 let itemDamage = player.inventory[0].modifier
 
 // for (i = 0, i < itemDamage; i++) {
-//   health -= itemDamage
+//   player.health -= itemDamage
 //   update()
 // }
