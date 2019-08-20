@@ -23,7 +23,7 @@ background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA
 
 .playerImage{
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY9c62P_SOJ4rWFg_Bi-dPQHuLcShI0Jptc9SjXptmR2oy9pay");
-  background-size: 400px 200px;
+  background-size: 300px 200px;
   background-position: center;
   background-repeat: no-repeat;
   border: 7.5px solid red
