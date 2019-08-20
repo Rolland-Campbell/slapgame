@@ -32,24 +32,14 @@ function reset() {
   let showItem = document.getElementById("itemPick")
   //updates screen back to default text
   showItem.innerHTML = "<br><b>Unbridled FURY!!</b>"
+  let resetMonster = document.querySelector(".enemyDead")
+  resetMonster.classList.replace("enemyDead", "enemy1")
+  let resetConan = document.querySelector(".conanKing")
+  resetConan.classList.replace("conanKing", "playerImage")
+  let resetVs = document.querySelector(".winBackground")
+  resetVs.classList.replace("winBackground", "vsBackground")
   update()
 }
-
-//original attack buttons
-// function slap() {
-//   health--;
-//   update()
-// }
-
-// function punch() {
-//   health -= 5;
-//   update()
-// }
-
-// function kick() {
-//   health -= 10;
-//   update()
-// }
 
 //this function updates the monster health to the screen
 function update() {
@@ -68,14 +58,17 @@ function attackButton(inputAttack) {
   if (inputAttack == 'slap') {
     mirrorMonster.health -= (1 + itemDamage);
     noNegative()
+    swapPicture()
     update()
   } else if (inputAttack == 'punch') {
     mirrorMonster.health -= (5 + itemDamage);
     noNegative()
+    swapPicture()
     update()
   } else if (inputAttack == 'kick') {
     mirrorMonster.health -= (10 + itemDamage);
     noNegative()
+    swapPicture()
     update()
   }
 }
@@ -95,3 +88,35 @@ function noNegative() {
     mirrorMonster.health = 0;
   }
 }
+
+//swap pictures when event occur
+function swapPicture() {
+  let deadMonster = document.querySelector(".enemy1")
+  let conanKing = document.querySelector(".playerImage")
+  let winBanner = document.querySelector(".vsBackground")
+  let mainBanner = document.querySelector("#mainBanner")
+  let footerBanner = document.querySelector("#footerBanner")
+  if (mirrorMonster.health == 0) {
+    deadMonster.classList.replace('enemy1', "enemyDead")
+    conanKing.classList.replace("playerImage", "conanKing")
+    winBanner.classList.replace("vsBackground", "winBackground")
+    mainBanner.textContent = "You did it!!"
+    footerBanner.textContent = "You saved the world!!"
+  }
+}
+
+//original attack buttons
+// function slap() {
+//   health--;
+//   update()
+// }
+
+// function punch() {
+//   health -= 5;
+//   update()
+// }
+
+// function kick() {
+//   health -= 10;
+//   update()
+// }
