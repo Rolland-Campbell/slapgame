@@ -91,13 +91,13 @@ function noNegative() {
 
 //swap pictures when event occur
 function swapPicture() {
-  let deadMonster = document.querySelector(".enemy1")
+  let deadMonster = document.querySelector(".enemy1") //finds original image
   let conanKing = document.querySelector(".playerImage")
   let winBanner = document.querySelector(".vsBackground")
   let mainBanner = document.querySelector("#mainBanner")
   let footerBanner = document.querySelector("#footerBanner")
   if (mirrorMonster.health == 0) {
-    deadMonster.classList.replace('enemy1', "enemyDead")
+    deadMonster.classList.replace('enemy1', "enemyDead") //replaces images
     conanKing.classList.replace("playerImage", "conanKing")
     winBanner.classList.replace("vsBackground", "winBackground")
     mainBanner.textContent = "You did it!!"
