@@ -27,6 +27,10 @@ let player = {
 function reset() {
   //resets health to 100 on page
   mirrorMonster.health = 100;
+  let resetHeader = document.getElementById("mainBanner");
+  resetHeader.textContent = "Help Conan defeat the monster!"
+  let footerReset = document.getElementById("footerBanner");
+  footerReset.textContent = "The fate of the world is at hand!"
   //resets inventory to 0
   player.inventory.length = 0;
   let showItem = document.getElementById("itemPick")
